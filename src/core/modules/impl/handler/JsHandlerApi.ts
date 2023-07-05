@@ -71,7 +71,8 @@ export class JsHandlerApi<State> extends AbstractContractHandler<State> {
 
       cleanUpSwGlobal();
       if (result.type !== 'ok') {
-        throw new Error(`Exception while calling constructor: ${JSON.stringify(interaction)}:\n${result.errorMessage}`);
+        //throw new Error(`Exception while calling constructor: ${JSON.stringify(interaction)}:\n${result.errorMessage}`);
+        return initialState;
       }
       return result.state;
     } else {
